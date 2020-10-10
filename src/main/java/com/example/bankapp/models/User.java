@@ -39,6 +39,8 @@ public class User {
         this.married = married;
     }
 
+    // getters and setters used for data management
+    // we don't have a setter for id because we are creating that for the user and it shouldn't change
     public long getId() {
         return id;
     }
