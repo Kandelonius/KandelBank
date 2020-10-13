@@ -8,6 +8,8 @@ public class User {
 
     private String firstname;
 
+    private char middleinitial;
+
     private String lastname;
 
     private String address;
@@ -24,6 +26,7 @@ public class User {
 
     public User(
         String firstname,
+        char middleinitial,
         String lastname,
         String address,
         String city,
@@ -31,6 +34,7 @@ public class User {
         int age,
         boolean married) {
         this.firstname = firstname;
+        this.middleinitial = middleinitial;
         this.lastname = lastname;
         this.address = address;
         this.city = city;
@@ -53,12 +57,17 @@ public class User {
         this.firstname = firstname;
     }
 
+    public char getMiddleinitial() {
+        return middleinitial;
+    }
+
     public String getLastname() {
         return lastname;
     }
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+//        return lastname;
     }
 
     public String getAddress() {
