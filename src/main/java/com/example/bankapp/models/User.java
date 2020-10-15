@@ -1,6 +1,7 @@
 package com.example.bankapp.models;
 
 public class User {
+    // fields
     // holds our max id ensuring we always have a unique user id
     private static long maxId = 0;
 
@@ -24,6 +25,8 @@ public class User {
 
     private double balance; // 8 bytes can contain decimal
 
+    private String sons_name;
+
     public User(
         String firstname,
         char middleinitial,
@@ -32,7 +35,8 @@ public class User {
         String city,
         String state,
         int age,
-        boolean married) {
+        boolean married,
+        double balance) {
         this.firstname = firstname;
         this.middleinitial = middleinitial;
         this.lastname = lastname;
@@ -41,6 +45,7 @@ public class User {
         this.state = state;
         this.age = age;
         this.married = married;
+        this.balance = 100.00;
     }
 
     // getters and setters used for data management
@@ -117,5 +122,19 @@ public class User {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+    public void setMiddleinitial(char middleinitial) {
+        this.middleinitial = middleinitial;
+    }
+
+    public String getSons_name() {
+        return sons_name;
+    }
+
+    public void setSons_name(String sons_name) {
+        this.sons_name = sons_name;
+    }
+
+
 }
 
