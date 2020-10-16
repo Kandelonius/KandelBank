@@ -37,6 +37,8 @@ public class User {
         int age,
         boolean married,
         double balance) {
+        maxId++;
+        id = maxId;
         this.firstname = firstname;
         this.middleinitial = middleinitial;
         this.lastname = lastname;
