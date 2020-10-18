@@ -1,11 +1,15 @@
 package com.example.bankapp.models;
 
-public class User {
-    // fields
-    // holds our max id ensuring we always have a unique user id
-    private static long maxId = 0;
+import java.util.UUID;
 
-    private long id; // long is 8 bytes which is 64 bits
+public class User {
+
+    // holds our max id ensuring we always have a unique user id
+    // private static long maxId = 0;
+    // private long id; // long is 8 bytes which is 64 bits
+
+    // fields
+    private UUID id;
 
     private String firstname;
 
@@ -27,6 +31,9 @@ public class User {
 
     private String sons_name;
 
+    /**
+     * constructor created for manual insertion of a user
+     */
     public User(
         String firstname,
         char middleinitial,
@@ -37,8 +44,8 @@ public class User {
         int age,
         boolean married,
         double balance) {
-        maxId++;
-        id = maxId;
+//        maxId++;
+//        id = maxId;
         this.firstname = firstname;
         this.middleinitial = middleinitial;
         this.lastname = lastname;
@@ -50,9 +57,19 @@ public class User {
         this.balance = 100.00;
     }
 
+    /**
+     * constructor created for dao method
+     */
+    public User(
+        UUID id,
+        String firstname) {
+        this.id = id;
+        this.firstname = firstname;
+    }
+
     // getters and setters used for data management
     // we don't have a setter for id because we are creating that for the user and it shouldn't change
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 

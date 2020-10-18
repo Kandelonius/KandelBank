@@ -16,17 +16,6 @@ public class BankappApplication {
 
     public static void demo() {
 
-        //         public User(
-        //            String firstname,
-        //            char middleinitial,
-        //            String lastname,
-        //            String address,
-        //            String city,
-        //            String state,
-        //            int age,
-        //            boolean married,
-        //            double balance)
-
         User carol = new User("Carol",
             'c',
             "Bannister",
@@ -46,8 +35,6 @@ public class BankappApplication {
             90,
             false,
             125);
-
-        //        User bob new User("Bob")
 
         System.out.println(carol.getAddress());
         System.out.println("Last name is " + carol.getLastname());
