@@ -1,5 +1,7 @@
 package com.example.bankapp.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.UUID;
 
 public class User {
@@ -61,8 +63,8 @@ public class User {
      * constructor created for dao method
      */
     public User(
-        UUID id,
-        String firstname) {
+        @JsonProperty("id") UUID id,
+        @JsonProperty("name") String firstname) {
         this.id = id;
         this.firstname = firstname;
     }
