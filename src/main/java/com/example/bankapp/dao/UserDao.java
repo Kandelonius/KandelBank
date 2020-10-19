@@ -19,7 +19,7 @@ public interface UserDao {
      * @param user the user
      * @return an id
      */
-    default long addUser(User user) {
+    default int insertUser(User user) {
         UUID id = UUID.randomUUID();
         return insertUser(id, user);
     }
