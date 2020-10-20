@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("api/v1/user")
+@RequestMapping("api/v1/user") // our home url
 @RestController
 public class UserController {
 
@@ -25,7 +25,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping // to add a new user with a post request
     public void addUser(
         @RequestBody
             User user) {
