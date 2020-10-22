@@ -3,10 +3,9 @@ package com.example.bankapp.api;
 import com.example.bankapp.models.User;
 import com.example.bankapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("api/v1/user") // our home url
 @RestController
@@ -25,10 +24,21 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping // to add a new user with a post request
+    /**
+     * @param user to add a new user with a post request
+     */
+    @PostMapping
     public void addUser(
         @RequestBody
             User user) {
         userService.addUser(user);
+    }
+
+    /**
+     * @return returns the result of the getAllUsers logic from inside UserService
+     */
+    @GetMapping
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
     }
 }

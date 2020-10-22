@@ -21,4 +21,9 @@ public class FakeUserDataAccessService implements UserDao {
         DB.add(new User(id, user.getFirstname()));
         return 1;
     }
+
+    @Override
+    public List<User> selectAllUsers() {
+        return null;
+    }
 }
