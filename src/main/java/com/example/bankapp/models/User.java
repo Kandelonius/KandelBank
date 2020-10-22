@@ -46,8 +46,8 @@ public class User {
         int age,
         boolean married,
         double balance) {
-//        maxId++;
-//        id = maxId;
+        //        maxId++;
+        //        id = maxId;
         this.firstname = firstname;
         this.middleinitial = middleinitial;
         this.lastname = lastname;
@@ -63,8 +63,10 @@ public class User {
      * constructor created for dao method
      */
     public User(
-        @JsonProperty("id") UUID id,
-        @JsonProperty("name") String firstname) {
+        @JsonProperty("id")
+            UUID id,
+        @JsonProperty("name")
+            String firstname) {
         this.id = id;
         this.firstname = firstname;
     }
@@ -93,7 +95,7 @@ public class User {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-//        return lastname;
+        //        return lastname;
     }
 
     public String getAddress() {
@@ -156,6 +158,12 @@ public class User {
         this.sons_name = sons_name;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            '}';
+    }
 }
 

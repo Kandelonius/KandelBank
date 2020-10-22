@@ -1,7 +1,6 @@
 package com.example.bankapp.dao;
 
 import com.example.bankapp.models.User;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -18,12 +17,13 @@ public class FakeUserDataAccessService implements UserDao {
         UUID id,
         User user) {
 
-        DB.add(new User(id, user.getFirstname()));
+        DB.add(new User(id,
+            user.getFirstname()));
         return 1;
     }
 
     @Override
     public List<User> selectAllUsers() {
-        return null;
+        return DB;
     }
 }
