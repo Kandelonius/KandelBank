@@ -3,6 +3,7 @@ package com.example.bankapp.dao;
 import com.example.bankapp.models.User;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface UserDao {
@@ -27,4 +28,10 @@ public interface UserDao {
     }
 
     public List<User> selectAllUsers();
+
+    Optional<User> selectUserById(UUID id);
+
+    int deleteUserById(UUID id);
+
+    int updateUserById(UUID id, User user);
 }
