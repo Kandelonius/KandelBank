@@ -17,7 +17,7 @@ public class UserService {
 
     @Autowired
     public UserService(
-        @Qualifier("fakeDao")
+        @Qualifier("postgres") // to use fakeDao here change @Qualifier to fakeDao
             UserDao
             userDao) {
         this.userDao = userDao;

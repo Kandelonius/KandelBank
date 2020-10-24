@@ -15,6 +15,8 @@ public class User {
     private UUID id;
 
     @NotBlank
+    private String username;
+
     private String firstname;
 
     private char middleinitial;
@@ -68,16 +70,24 @@ public class User {
     public User(
         @JsonProperty("id")
             UUID id,
-        @JsonProperty("name")
-            String firstname) {
+        @JsonProperty("username")
+            String username) {
         this.id = id;
-        this.firstname = firstname;
+        this.username = username;
     }
 
     // getters and setters used for data management
     // we don't have a setter for id because we are creating that for the user and it shouldn't change
     public UUID getId() {
         return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirstname() {

@@ -3,10 +3,10 @@ package com.example.bankapp.api;
 import com.example.bankapp.models.User;
 import com.example.bankapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,7 +32,9 @@ public class UserController {
      */
     @PostMapping
     public void addUser(
-        @Valid @NonNull @RequestBody User user) {
+        @Valid @NotNull
+        @RequestBody
+            User user) {
         userService.addUser(user);
     }
 
@@ -76,8 +78,7 @@ public class UserController {
     public void updateUser(
         @PathVariable("id")
             UUID id,
-        @Valid
-        @NonNull
+        @Valid @NotNull
         @RequestBody
             User userToUpdate) {
         userService.updateUser(id,

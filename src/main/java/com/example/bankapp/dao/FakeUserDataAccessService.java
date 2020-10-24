@@ -19,7 +19,7 @@ public class FakeUserDataAccessService implements UserDao {
         User user) {
 
         DB.add(new User(id,
-            user.getFirstname()));
+            user.getUsername()));
         return 1;
     }
 
@@ -54,7 +54,7 @@ public class FakeUserDataAccessService implements UserDao {
             int indexOfUserToUpdate = DB.indexOf(u);
             if (indexOfUserToUpdate >= 0) {
                 DB.set(indexOfUserToUpdate,
-                    new User(id, user.getFirstname()));
+                    new User(id, user.getUsername()));
                 return 1;
             }
             return 0;
