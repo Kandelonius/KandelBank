@@ -2,6 +2,7 @@ package com.example.bankapp.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 public class User {
@@ -13,6 +14,7 @@ public class User {
     // fields
     private UUID id;
 
+    @NotBlank
     private String firstname;
 
     private char middleinitial;
@@ -60,7 +62,8 @@ public class User {
     }
 
     /**
-     * constructor created for dao method
+     * constructor created for dao method allows us to create users with just
+     * this information provided
      */
     public User(
         @JsonProperty("id")

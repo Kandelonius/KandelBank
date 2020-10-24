@@ -3,8 +3,10 @@ package com.example.bankapp.api;
 import com.example.bankapp.models.User;
 import com.example.bankapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -30,8 +32,7 @@ public class UserController {
      */
     @PostMapping
     public void addUser(
-        @RequestBody
-            User user) {
+        @Valid @NonNull @RequestBody User user) {
         userService.addUser(user);
     }
 
@@ -55,13 +56,31 @@ public class UserController {
             .orElse(null);
     }
 
+    /**
+     * deletes the user associated with the given id
+     *
+     * @param id the id of the user to delete
+     */
     @DeleteMapping(path = "{id}")
-    public void deleteUserById(@PathVariable("id") UUID id) {
+    public void deleteUserById(
+        @PathVariable("id")
+            UUID id) {
         userService.deleteUser(id);
     }
 
+    /**
+     * @param id           the id passed from the endpoint
+     * @param userToUpdate the user associated with the id that was passed
+     */
     @PutMapping(path = "{id}")
-    public void updateUser(@PathVariable("id") UUID id, @RequestBody User userToUpdate) {
-        userService.updateUser(id, userToUpdate);
+    public void updateUser(
+        @PathVariable("id")
+            UUID id,
+        @Valid
+        @NonNull
+        @RequestBody
+            User userToUpdate) {
+        userService.updateUser(id,
+            userToUpdate);
     }
 }

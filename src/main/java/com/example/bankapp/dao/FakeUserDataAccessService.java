@@ -51,10 +51,10 @@ public class FakeUserDataAccessService implements UserDao {
         UUID id,
         User user) {
         return selectUserById(id).map(u -> {
-            int indexOfUserToDelete = DB.indexOf(user);
-            if (indexOfUserToDelete >= 0) {
-                DB.set(indexOfUserToDelete,
-                    user);
+            int indexOfUserToUpdate = DB.indexOf(u);
+            if (indexOfUserToUpdate >= 0) {
+                DB.set(indexOfUserToUpdate,
+                    new User(id, user.getFirstname()));
                 return 1;
             }
             return 0;

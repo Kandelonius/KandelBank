@@ -16,6 +16,9 @@ public class BankappApplication {
 
     public static void demo() {
 
+        /*
+         * Note: these users will not be added to the database.
+         */
         User carol = new User("Carol",
             'c',
             "Bannister",
