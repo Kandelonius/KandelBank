@@ -1,0 +1,29 @@
+header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    background-color: dimgray;
+    border-bottom: 2px solid black;
+    height: 62px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 25%;
+    background-color: dimgray;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    top: 62px;
+    margin: 0 auto;
+    padding: 5px;
+}
