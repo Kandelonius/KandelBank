@@ -13,3 +13,6 @@ Feature # 1: user account
         balance
         married (boolean)
         
+Feature #2: users can have financial accounts such as a savings account
+    - to have any financial account the user must have a savings account
+    - other types of account include loans

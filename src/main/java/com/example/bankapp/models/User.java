@@ -33,8 +33,6 @@ public class User {
 
     private boolean married;
 
-    private double balance; // 8 bytes can contain decimal
-
     private String sons_name;
 
     /**
@@ -48,8 +46,7 @@ public class User {
         String city,
         String state,
         int age,
-        boolean married,
-        double balance) {
+        boolean married) {
         //        maxId++;
         //        id = maxId;
         this.firstname = firstname;
@@ -60,7 +57,6 @@ public class User {
         this.state = state;
         this.age = age;
         this.married = married;
-        this.balance = 100.00;
     }
 
     /**
@@ -149,14 +145,6 @@ public class User {
 
     public void setMarried(boolean married) {
         this.married = married;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
     }
 
     public void setMiddleinitial(char middleinitial) {

@@ -26,8 +26,7 @@ public class BankappApplication {
             "string",
             "state",
             90,
-            false,
-            12.70);
+            false);
 
         User jim = new User("Jim",
             'j',
@@ -36,18 +35,17 @@ public class BankappApplication {
             "string",
             "state",
             90,
-            false,
-            125);
+            false);
 
         System.out.println(carol.getAddress());
         System.out.println("Last name is " + carol.getLastname());
         carol.setLastname("Smith");
         System.out.println("Last name is now " + carol.getLastname());
         System.out.println("Jim's id is " + jim.getId());
-        System.out.println("Jim's balance is " + jim.getBalance());
-        System.out.println("Carol's balance is " + carol.getBalance());
-        carol.setBalance(carol.getBalance() + 10);
-        System.out.println("Carol's balance is now " + carol.getBalance());
+//        System.out.println("Jim's balance is " + jim.getBalance());
+//        System.out.println("Carol's balance is " + carol.getBalance());
+//        carol.setBalance(carol.getBalance() + 10);
+//        System.out.println("Carol's balance is now " + carol.getBalance());
     }
 }
 
