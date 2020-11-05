@@ -15,4 +15,13 @@ public class Account {
     private Checking checking;
 
     private Loan loan;
+
+    public Account(
+        UUID id,
+        @NotNull Savings savings) {
+        this.id = id;
+        this.savings = savings;
+    }
+
+
 }
